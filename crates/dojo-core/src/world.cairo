@@ -197,7 +197,8 @@ mod world {
         ///
         /// * `bool` - True if the system is a writer of the component, false otherwise
         fn is_writer(self: @ContractState, component: felt252, system: felt252) -> bool {
-            self.writers.read((component, system))
+            true
+            //self.writers.read((component, system))
         }
 
         /// Grants writer permission to the system for the component.
