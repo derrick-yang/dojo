@@ -54,7 +54,7 @@ impl<'a, P> TransactionWaiter<'a, P>
 where
     P: Provider + Send,
 {
-    const DEFAULT_TIMEOUT: Duration = Duration::from_secs(60);
+    const DEFAULT_TIMEOUT: Duration = Duration::from_secs(240);
     const DEFAULT_INTERVAL: Duration = Duration::from_millis(250);
     const DEFAULT_STATUS: TransactionStatus = TransactionStatus::AcceptedOnL2;
 
