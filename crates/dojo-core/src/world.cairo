@@ -681,9 +681,10 @@ mod world {
     /// * `resource` - The selector of the resource being written to.
     /// * `caller` - The selector of the caller writing.
     fn assert_can_write(self: @ContractState, resource: felt252, caller: ContractAddress) {
+        let caller_felt252: felt252 = caller.into();
         assert!(
             IWorld::is_writer(self, resource, caller) || is_account_owner(self, resource),
-            "not writer: {} {}", resource, caller
+            "not writer: {} {}", resource, caller_felt252
         );
     }
 
